@@ -1,5 +1,6 @@
 import { AuthContextProvider } from "contexts/AuthContext";
 import { ThemeProvider } from "styled-components";
+import PageTemplate from "components/PageTemplate";
 import GlobalStyles from "styles/globalStyles";
 import theme from "styles/theme";
 
@@ -8,7 +9,9 @@ function MyApp({ Component, pageProps }) {
     <AuthContextProvider>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <Component {...pageProps} />
+        <PageTemplate>
+          <Component {...pageProps} />
+        </PageTemplate>
       </ThemeProvider>
     </AuthContextProvider>
   );
